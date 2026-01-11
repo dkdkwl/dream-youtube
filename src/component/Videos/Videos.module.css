@@ -1,0 +1,16 @@
+.videoList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 10px;
+
+  article {
+    width: calc((100% - 40px) / 5);
+    height: auto;
+    overflow: hidden;
+    img {
+      width: 100%;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}
