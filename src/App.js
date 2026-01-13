@@ -1,23 +1,22 @@
-import { Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Videos from "./component/Videos/Videos";
-import Header from "./component/Header/Header";
-import styles from "./asset/common.module.css";
+import VideoDetail from "./component/VideoDetail";
+import Layout from "./component/Layout";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      { index: true, element: <Videos /> },
+      { path: "videos/watch/:videoId", element: <VideoDetail /> },
+    ],
+  },
+]);
+
 
 function App() {
-  const NotFoundPage = () => <div>페이지를 찾을 수 없습니다</div>;
-  return (
-    <>
-      <div className={styles.container}>
-        <Header />
-        <Routes>
-          {/*
-      \ path="/"는 홈페이지 경로 */}
-          <Route path="/" element={<Videos />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </div>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

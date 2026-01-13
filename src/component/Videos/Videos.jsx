@@ -22,12 +22,12 @@ export default function Videos() {
           <article key={item.etag}>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a href="#">
-              <div>
+              <div className={style.thumbnail}>
                 <img src={item.snippet.thumbnails.medium.url} alt="" />
               </div>
-              <p>{item.snippet.title}</p>
-              <span>조회수 4.8만회</span>
-              <span>1개월 전</span>
+              <p className={style.title}>{item.snippet.title}</p>
+              <span className={style.views}>조회수 4.8만회</span>
+              <span className={style.date}>1개월 전</span>
             </a>
           </article>
         );
