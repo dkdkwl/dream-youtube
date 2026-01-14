@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import style from "./Videos.module.css";
+import React, { useEffect, useState } from "react";
+import style from "./RelatedVideos.module.css";
 
-export default function Videos() {
+export default function RelatedVideos() {
   const [videos, setVideos] = useState([]);
   useEffect(() => {
     fetch("/data/youtubeItems.json")
@@ -25,7 +25,7 @@ export default function Videos() {
               <div className={style.thumbnail}>
                 <img src={item.snippet.thumbnails.medium.url} alt="" />
               </div>
-              <div>
+              <div className={style.textbox}>
                 <p className={style.title}>{item.snippet.title}</p>
                 <span className={style.views}>조회수 4.8만회</span>
                 <span className={style.date}>1개월 전</span>

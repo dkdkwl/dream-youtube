@@ -5,13 +5,13 @@ import { CiSearch } from "react-icons/ci";
 export default function Header() {
   return (
     <nav className={styles.header}>
-      <div className={styles.headerLogoWrapper}>
+      <a href="/" className={styles.headerLogoWrapper}>
         <img
           className={styles.headerLogo}
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/1024px-YouTube_Logo_2017.svg.png"
           alt="YouTube Logo"
         />
-      </div>
+      </a>
       <div className={styles.headerSearch}>
         <input
           className={styles.headerSearchInput}

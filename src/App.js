@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Videos from "./component/Videos/Videos";
-import VideoDetail from "./component/VideoDetail";
+import VideoDetail from "./component/VideoDetail/VideoDetail";
 import Layout from "./component/Layout";
 
 const router = createBrowserRouter([
@@ -13,7 +13,6 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-
 
 function App() {
   return <RouterProvider router={router} />;

@@ -1,0 +1,59 @@
+.videoList {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  gap: 8px 0;
+
+  article {
+    a {
+      display: flex;
+      align-items: flex-start;
+      text-decoration: none;
+      gap: 0 10px;
+    }
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    .thumbnail {
+      img {
+        width: 100%; /* 부모 요소에 맞게 너비 설정 */
+        aspect-ratio: 16 / 9; /* 비율 고정 */
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        max-width: 160px;
+        max-height: 100%;
+      }
+    }
+    .textbox {
+      width: calc(100% - 160px - 10px);
+      padding: 2px 0 0 0;
+    }
+    .title {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: #000;
+      line-height: 1.2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* 두 줄로 제한 */
+      -webkit-box-orient: vertical;
+      padding: 0 0 0 0;
+      margin: 6px 0 0 0;
+    }
+    .views {
+      display: block;
+      font-size: 11px;
+      color: #606060;
+      margin-top: 4px;
+    }
+    .date {
+      display: block;
+      font-size: 10px;
+      color: #606060;
+      margin-top: 4px;
+    }
+  }
+}
