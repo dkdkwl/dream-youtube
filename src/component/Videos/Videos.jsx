@@ -21,7 +21,7 @@ export default function Videos() {
         return (
           <article key={item.etag}>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a href="#">
+            <a href={`/videos/watch/${item.id}`}>
               <div className={style.thumbnail}>
                 <img src={item.snippet.thumbnails.medium.url} alt="" />
               </div>
