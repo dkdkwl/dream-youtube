@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./RelatedVideos.module.css";
+import { Link } from "react-router-dom";
 
 export default function RelatedVideos() {
   const [videos, setVideos] = useState([]);
@@ -21,7 +22,7 @@ export default function RelatedVideos() {
         return (
           <article key={item.etag}>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a href={`/videos/watch/${item.id}`}>
+            <Link to={`/videos/watch/${item.id}`}>
               <div className={style.thumbnail}>
                 <img src={item.snippet.thumbnails.medium.url} alt="" />
               </div>
@@ -30,7 +31,7 @@ export default function RelatedVideos() {
                 <span className={style.views}>조회수 4.8만회</span>
                 <span className={style.date}>1개월 전</span>
               </div>
-            </a>
+            </Link>
           </article>
         );
       })}
