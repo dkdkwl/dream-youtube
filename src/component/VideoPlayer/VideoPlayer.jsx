@@ -1,12 +1,12 @@
 import style from "./VideoPlayer.module.css";
 
-export default function VideoPlayer() {
+export default function VideoPlayer({ videoId,title,description,channelTitle,channelId }) {
   return (
     <div className={style.videoPlayer}>
       <div className={style.playerWrapper}>
         <iframe
           className={style.iframe}
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          src={`https://www.youtube.com/embed/${videoId}`}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -15,15 +15,14 @@ export default function VideoPlayer() {
       </div>
       <div className={style.videoInfo}>
         <h1 className={style.title}>
-          Run BTS! 2022 Special Episode - Fly BTS Fly Part 2
+          {title}
         </h1>
         <div className={style.channel}>
-          <span className={style.channelName}>BANGTANTV</span>
+          <a target="_blank" href={`https://www.youtube.com/channel/${channelId}`} className={style.channelName}>{channelTitle}</a>
         </div>
         <div className={style.description}>
           <p>
-            RunBTS #달려라방탄 #달방 Connect with BTS: https://ibighit.com/bts
-            http://twitter.com/BTS_twt ...
+            {description}
           </p>
         </div>
       </div>
