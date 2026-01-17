@@ -8,7 +8,6 @@ export default function RelatedVideos() {
     fetch("/data/youtubeItems.json")
       .then((response) => response.json()) // JSON 형식으로 파싱
       .then((data) => {
-        console.log(data); // 데이터 출력
         setVideos(data.items);
       })
       .catch((error) => {
