@@ -14,7 +14,8 @@ export default function Videos() {
     fetch(url)
       .then((response) => response.json()) // JSON 형식으로 파싱
       .then((data) => {
-        setVideos(data.items);
+        setVideos(data.items || []);
+        console.log("Videos data:", data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error); // 오류 처리
@@ -23,7 +24,7 @@ export default function Videos() {
 
   return (
     <div className={style.videoList}>
-      {videos.map((item) => {
+      {videos?.map((item) => {
         return (
           <article key={item.etag}>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

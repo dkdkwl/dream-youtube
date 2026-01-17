@@ -30,7 +30,10 @@ export default function VideoDetail() {
           channelTitle={video?.snippet.channelTitle}
           channelId={video?.snippet.channelId}
         />
-        <RelatedVideos></RelatedVideos>
+        <RelatedVideos
+          videoId={video?.id}
+          categoryId={video?.snippet.categoryId}
+        ></RelatedVideos>
       </div>
     </>
   );
