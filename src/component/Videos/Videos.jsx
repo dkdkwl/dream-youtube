@@ -5,7 +5,7 @@ import { useSearchParams } from "react-router-dom";
 
 export default function Videos() {
   const [videos, setVideos] = useState([]);
-  let [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const query = searchParams.get("q");
   useEffect(() => {
     const url = query

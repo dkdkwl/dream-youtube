@@ -24,6 +24,7 @@ export default function VideoPlayer({
         <div className={style.channel}>
           <a
             target="_blank"
+            rel="noreferrer"
             href={`https://www.youtube.com/channel/${channelId}`}
             className={style.channelName}
           >
