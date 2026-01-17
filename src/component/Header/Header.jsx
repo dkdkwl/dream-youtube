@@ -9,7 +9,11 @@ export default function Header() {
 
   function handleSubmit(e) {
     e.preventDefault(); // 추가 필요
-    navigate(`/?q=${inputText}`);
+    if (inputText.trim() === "") {
+      return;
+    } else {
+      navigate(`/?q=${inputText}`);
+    }
   }
   return (
     <nav className={styles.header}>
